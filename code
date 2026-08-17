@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You Are My World</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:white;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    text-align:center;
+}
+
+#display{
+    width:300px;
+    height:300px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+}
+
+#display img{
+    width:260px;
+    height:260px;
+    object-fit:contain;
+}
+
+#display h1{
+    font-size:45px;
+}
+
+.buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+button{
+    width:90px;
+    height:50px;
+    font-size:22px;
+    font-weight:bold;
+    border:3px solid #000;
+    border-radius:8px;
+    background:white;
+    cursor:pointer;
+}
+
+button.active{
+    background:#58a9ff;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="display"></div>
+
+<div class="buttons">
+<button onclick="show144(this)">144p</button>
+<button onclick="show480(this)">480p</button>
+<button onclick="show720(this)">720p</button>
+<button onclick="show1080(this)">1080p</button>
+</div>
+
+</div>
+
+<script>
+
+const display = document.getElementById("display");
+
+function reset(btn){
+    document.querySelectorAll("button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+}
+
+function show144(btn){
+    reset(btn);
+    display.innerHTML='<img src="pixel.jpg">';
+}
+
+function show480(btn){
+    reset(btn);
+    display.innerHTML='<img src="anime.jpg">';
+}
+
+function show720(btn){
+    reset(btn);
+    display.innerHTML='<img src="real.jpg">';
+}
+
+function show1080(btn){
+    reset(btn);
+    display.innerHTML='<h1>You are my world ❤️</h1>';
+}
+
+</script>
+
+</body>
+</html>
